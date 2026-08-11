@@ -1,26 +1,122 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+@theme {
+  --color-ink: #1a1d21;
+  --color-ink-soft: #23272d;
+  --color-amber: #e8a317;
+  --color-amber-deep: #c88a0e;
+  --color-steel: #2e5e7e;
+  --color-steel-soft: #3e7196;
+  --color-surface: #f7f5f0;
+  --color-card: #ffffff;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-script: var(--font-caveat), cursive;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --radius-card: 10px;
+
+  --shadow-card: 0 10px 30px rgba(26, 29, 33, 0.1);
+  --shadow-lift: 0 16px 40px rgba(26, 29, 33, 0.16);
+
+  --animate-drip: drip 1.8s ease-in-out infinite;
+  --animate-panel-in: panel-in 0.35s ease;
+
+  @keyframes drip {
+    0% {
+      transform: scaleY(0.2);
+      transform-origin: top;
+    }
+    60% {
+      transform: scaleY(1);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes panel-in {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ============================================================
+   BASE
+   ============================================================ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-amber);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+
+/* blueprint grid texture used on every dark section */
+@utility blueprint-grid {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(247, 245, 240, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(247, 245, 240, 0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+}
+
+/* animated "drip" tail under the hero scroll hint */
+@utility scroll-drip {
+  &::after {
+    content: "";
+    width: 2px;
+    height: 34px;
+    background: linear-gradient(var(--color-amber), transparent);
+    animation: var(--animate-drip);
+  }
+}
+
+/* oversized opening quote mark on the CEO letter */
+@utility quote-mark {
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: -30px;
+    left: -8px;
+    font-family: var(--font-display);
+    font-size: 8rem;
+    line-height: 1;
+    color: var(--color-amber);
+    opacity: 0.9;
+  }
 }
