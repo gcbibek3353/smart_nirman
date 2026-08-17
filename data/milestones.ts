@@ -7,6 +7,7 @@ export type Milestone = {
   /** Names rendered with a non-breaking treatment after the "·" separator. */
   titleSuffix?: string;
   description: string;
+  link: string;
 };
 
 export const badgeStyles: Record<BadgeKind, string> = {
@@ -30,6 +31,7 @@ export const milestones: Milestone[] = [
     title: "False Ceiling House",
     description:
       "The founding company — where the Group's story begins, specializing in ceiling and partition systems.",
+    link: "#"
   },
   {
     year: "2071",
@@ -37,6 +39,7 @@ export const milestones: Milestone[] = [
     title: "Smart Ceiling Industries",
     description:
       "First step into manufacturing — ceiling framing systems made in Nepal.",
+    link: "#"
   },
   {
     year: "2072",
@@ -44,6 +47,7 @@ export const milestones: Milestone[] = [
     title: "Nirman Sansar",
     description:
       "Expanding into roofing, windows, doors, and uPVC industry solutions.",
+    link: "#"
   },
   {
     year: "2073",
@@ -51,6 +55,7 @@ export const milestones: Milestone[] = [
     title: "False Ceiling Solution",
     description:
       "From supplying materials to installing them — ceiling, partition, ACP, and cladding works.",
+    link: "#"
   },
   {
     year: "2075",
@@ -59,6 +64,7 @@ export const milestones: Milestone[] = [
     titleSuffix: "Smart Nirman Samagri",
     description:
       "Turnkey interior design projects, alongside a new retail outlet for finishing materials.",
+    link: "https://interiorworld.com.np"
   },
   {
     year: "2076",
@@ -66,6 +72,7 @@ export const milestones: Milestone[] = [
     title: "Naya Nirman Construction",
     description:
       "Full-scale construction — residential, commercial, government, and prefab projects.",
+    link: "https://www.facebook.com/NayaNirmanSasnarConstruction/"
   },
   {
     year: "2077",
@@ -73,6 +80,7 @@ export const milestones: Milestone[] = [
     title: "False Ceiling Tradelink",
     description:
       "Bringing complete ceiling & partition materials directly to retail customers.",
+    link: "#"
   },
   {
     year: "2081",
@@ -81,6 +89,7 @@ export const milestones: Milestone[] = [
     titleSuffix: "Nirman Windoor System",
     description:
       "Steel structures, soundproofing, curtain walls, and heavy aluminum window systems.",
+    link: "#"
   },
   {
     year: "2082",
@@ -89,5 +98,6 @@ export const milestones: Milestone[] = [
     titleSuffix: "Smart Insulated Roofing",
     description:
       "Modern sandwich panels and insulated roofing — manufactured in Nepal, for Nepal.",
+    link: "#"
   },
 ];
