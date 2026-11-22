@@ -15,10 +15,10 @@ export default function Hero() {
       id="home"
       className="blueprint-grid relative flex min-h-screen items-center bg-ink bg-[radial-gradient(1000px_500px_at_80%_10%,rgba(46,94,126,0.28),transparent_60%),radial-gradient(700px_420px_at_10%_90%,rgba(232,163,23,0.12),transparent_60%)] pb-24 pt-[140px] text-surface"
     >
-      <Container className="relative z-[1] grid items-center gap-16 min-[901px]:grid-cols-[1.25fr_0.75fr]">
+      <Container className="relative z-[1] grid items-center gap-12 min-[901px]:grid-cols-[0.9fr_1.1fr]">
         <div>
           <Eyebrow>Inspired by Group of Smart Nirman</Eyebrow>
-          <h1 className="font-display text-[clamp(2.4rem,5.5vw,4.2rem)] font-bold leading-[1.12] tracking-[-0.01em]">
+          <h1 className="font-display text-[clamp(2.2rem,4.4vw,3.6rem)] font-bold leading-[1.12] tracking-[-0.01em]">
             Building Nepal&apos;s Future with{" "}
             <span className="text-amber">Innovation, Quality &amp; Trust.</span>
           </h1>

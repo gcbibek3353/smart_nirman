@@ -1,3 +1,5 @@
+import Image from "next/image";
+import ceoImage from "@/app/assets/ceo_image.png";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import SectionHead from "@/components/ui/SectionHead";
@@ -22,12 +24,14 @@ export default function CeoMessage() {
         />
 
         <div className="grid items-start gap-16 min-[901px]:grid-cols-[0.85fr_1.15fr]">
-          <Reveal
-            role="img"
-            aria-label="Portrait of Nabaraj Chaulagain, Chief Executive Officer"
-            className="grid aspect-[4/5] max-w-[380px] place-items-center rounded-card border border-ink/12 bg-ink bg-[linear-gradient(160deg,rgba(46,94,126,0.35),rgba(26,29,33,0.9)),repeating-linear-gradient(45deg,rgba(232,163,23,0.06)_0_2px,transparent_2px_14px)] font-display text-[0.8rem] uppercase tracking-[0.14em] text-surface/74 min-[901px]:sticky min-[901px]:top-[110px] min-[901px]:max-w-none"
-          >
-            [ CEO portrait here ]
+          <Reveal className="max-w-[380px] overflow-hidden rounded-card border border-ink/12 shadow-card min-[901px]:sticky min-[901px]:top-[110px] min-[901px]:max-w-none">
+            <Image
+              src={ceoImage}
+              alt="Portrait of Nabaraj Chaulagain, Chief Executive Officer"
+              placeholder="blur"
+              sizes="(min-width: 901px) 40vw, 380px"
+              className="aspect-[4/5] w-full object-cover object-[50%_35%]"
+            />
           </Reveal>
 
           <Reveal className="quote-mark relative pt-8 [&_p+p]:mt-4">
